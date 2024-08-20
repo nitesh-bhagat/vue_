@@ -14,7 +14,7 @@ const jobList = ref([])
 
 onMounted(async () => {
     try {
-        const resp = await axios.get("http://localhost:4000/jobs");
+        const resp = await axios.get("/api/jobs");
         jobList.value = resp.data;
     } catch (error) {
         console.log('Error loading jobs:', error)

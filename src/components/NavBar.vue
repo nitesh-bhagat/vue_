@@ -27,6 +27,10 @@ const menuList = [
         title: "Sign up",
         to: "/sign-up"
     },
+    {
+        title: "Create Job",
+        to: "/create-job"
+    },
 ]
 
 

@@ -1,29 +1,44 @@
-<script setup></script>
+<script setup>
+
+const footerLinks = [
+    { href: "/", title: "Home"},
+    { href: '/about', title: 'About Us' },
+    { href: '/contact', title: 'Contact Us' },
+    { href: '/privacy-policy', title: 'Privacy Policy' },
+    { href: '/terms-of-service', title: 'Terms of Service' },
+    { href: '/careers', title: 'Careers' },
+    { href: '/faq', title: 'FAQ' },
+    { href: '/blog', title: 'Blog' },
+    { href: '/support', title: 'Support' },
+    { href: '/newsletter', title: 'Newsletter' },
+    { href: '/sitemap', title: 'Sitemap' },
+    { href: '/press', title: 'Press' },
+    { href: '/events', title: 'Events' },
+    { href: '/testimonials', title: 'Testimonials' },
+    { href: '/partners', title: 'Partners' },
+    { href: '/media-kit', title: 'Media Kit' }
+]
+
+
+</script>
 
 <template>
     <footer class="flex flex-col items-center w-full text-white">
-        <div class="bg-purple-600 w-full px-20 py-2">
-            <span>Follow us on social media</span>
+        <div class="bg-purple-600 w-full px-32 py-2">
+            <span>Follow us on socialqwd3d media</span>
         </div>
         <div class="flex flex-row w-full bg-purple-700 px-3 py-10 ">
 
-            <div class="grid grid-rows-4 grid-flow-col gap-4  flex-1 place-items-center ">
-                <span>Home</span>
-                <span>About</span>
-                <span>Contact us</span>
-                <span>Career</span>
-                <span>Home</span>
-                <span>About</span>
-                <span>Contact us</span>
-                <span>Career</span>
-                <span>About</span>
-                <span>Contact us</span>
-                <span>Career</span>
-                <span>Career</span>
-                <span>About</span>
-                <span>Contact us</span>
-                <span>Career</span>
+            <div class="mr-32 "></div>
 
+            <div class="grid grid-rows-4 grid-flow-col gap-3 flex-1 place-items-start  ">
+          
+                <RouterLink v-for="menu in footerLinks"  :to="menu.href" :key="menu.href">
+                    <span>
+                        {{ menu.title }}
+                    </span>
+                </RouterLink>
+               
             </div>
 
             <div class="flex flex-col w-1/5 ">

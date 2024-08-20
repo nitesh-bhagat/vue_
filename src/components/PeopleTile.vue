@@ -1,5 +1,5 @@
 <script setup>
-import { computed, defineProps } from 'vue';
+import { computed } from 'vue';
 import { RouterLink } from 'vue-router';
 
 
@@ -8,7 +8,6 @@ const { title, subtitle } = defineProps({
     subtitle: String,
     image: {
         type: String,
-
     }
 })
 

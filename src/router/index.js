@@ -7,6 +7,7 @@ import JobInfoView from "@/Views/JobInfoView.vue";
 import SignInView from "@/Views/SignInView.vue";
 import SignUpView from "@/Views/SignUpView.vue";
 import ProfileView from "@/Views/ProfileView.vue";
+import CreateJobView from "@/Views/CreateJobView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -40,6 +41,11 @@ const router = createRouter({
       path: "/sign-up",
       name: "Sign Up",
       component: SignUpView,
+    },
+    {
+      path: "/create-job",
+      name: "Create Job",
+      component: CreateJobView,
     },
     {
       path: "/profile/:id",
