@@ -4,7 +4,7 @@ const store = createStore({
     state(){
         return {
             todolist:[
-                
+                "hello"
             ]
         }
     },
