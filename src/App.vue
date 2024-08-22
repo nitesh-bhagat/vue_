@@ -1,18 +1,28 @@
 <template>
-  <h1>Hello {{number}}</h1>
+
+
+  <div class="flex flex-row bg-slate-50 gap-0 items-center justify-center min-h-screen ">
+
+
+    <div class="w-2/3 bg-white min-h-screen">
+      <RouterView />
+    </div>
+
+
+
+  </div>
+
 </template>
 
 
 <script>
-export default{
-  data(){
-    return {
-      number:0,
-    }
-  }
+import { RouterView } from 'vue-router';
+
+
+
+export default {
+  name: "App",
+
 }
 
 </script>
-
-
-
