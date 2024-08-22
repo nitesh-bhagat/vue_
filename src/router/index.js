@@ -1,12 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "@/Views/HomeView.vue";
-import JobView from "@/Views/JobView.vue";
-import ExploreView from "@/Views/ExploreView.vue";
-import NotFoundView from "@/Views/NotFoundView.vue";
-import JobInfoView from "@/Views/JobInfoView.vue";
-import SignInView from "@/Views/SignInView.vue";
-import SignUpView from "@/Views/SignUpView.vue";
-import ProfileView from "@/Views/ProfileView.vue";
+import HomePage from "@/views/HomePage.vue";
+import NotFoundView from "@/views/NotFoundView.vue"
+import CreateBoardPage from "@/views/CreateBoardPage.vue"
+import SignIn from "@/views/auth/SignIn.vue"
+import SignUp from "@/views/auth/SignUp.vue"
+
+
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,37 +14,22 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: HomeView,
+      component: HomePage,
     },
     {
-      path: "/jobs",
-      name: "jobs",
-      component: JobView,
+      path: "/create-board",
+      name: "create-board",
+      component: CreateBoardPage,
     },
     {
-      path: "/jobs/:id",
-      name: "Job-Detail",
-      component: JobInfoView,
+      path: "/signin",
+      name: "signin",
+      component: SignIn,
     },
     {
-      path: "/explore",
-      name: "Explore",
-      component: ExploreView,
-    },
-    {
-      path: "/sign-in",
-      name: "Sign In",
-      component: SignInView,
-    },
-    {
-      path: "/sign-up",
-      name: "Sign Up",
-      component: SignUpView,
-    },
-    {
-      path: "/profile/:id",
-      name: "Profile",
-      component: ProfileView,
+      path: "/signup",
+      name: "signup",
+      component: SignUp,
     },
     {
       path: "/:catchAll(.*)",

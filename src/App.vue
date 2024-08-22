@@ -1,32 +1,28 @@
-<script setup>
-import NavBar from '@/components/NavBar.vue';
-import FooterSection from '@/components/FooterSection.vue';
-import { RouterView, useRoute } from 'vue-router';
-import { computed } from 'vue';
-
-
-
-const route = useRoute();
-
-const showNavbar = computed(() => {
-  return route.path !== '/sign-in' && route.path !== '/sign-up';
-});
-
-
-</script>
-
 <template>
 
-  <NavBar v-if="showNavbar" />
 
-  <RouterView />
-  <FooterSection v-if="showNavbar" />
+  <div class="flex flex-row bg-slate-50 gap-0 items-center justify-center min-h-screen ">
 
 
+    <div class="w-2/3 bg-white min-h-screen">
+      <RouterView />
+    </div>
 
 
 
+  </div>
 
 </template>
 
-<style scoped></style>
+
+<script>
+import { RouterView } from 'vue-router';
+
+
+
+export default {
+  name: "App",
+
+}
+
+</script>
