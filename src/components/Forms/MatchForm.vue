@@ -9,7 +9,7 @@
                 <span class="text-xs">Select Player 1 </span>
 
                 <select placeholder="Select player" v-model="form.player1_id"  id="type" name="type" class="border rounded w-full py-2 px-3">
-                    <option v-for="person in getPeople" :value="person.id">{{ person.name }}</option>
+                    <option v-for="person in getPeople" :key="person.id" :value="person.id">{{ person.name }}</option>
                 </select>
 
                 <input v-model="form.player1_score" type="text" placeholder="score" class="outline-none w-16 text-center  text-2xl">
@@ -21,7 +21,7 @@
                 <span class="text-xs">Select Player 2 </span>
 
                 <select placeholder="Select player" v-model="form.player2_id" id="type" name="type" class="border rounded w-full py-2 px-3">
-                    <option v-for="person in getPeople" :value="person.id">{{ person.name }}</option>
+                    <option v-for="person in getPeople" :key="person.id" :value="person.id">{{ person.name }}</option>
                 </select>
 
                 <input v-model="form.player2_score" type="text" placeholder="score" class="outline-none w-16 text-center  text-2xl">

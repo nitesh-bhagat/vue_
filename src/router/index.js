@@ -1,9 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomePage from "@/views/HomePage.vue";
-import NotFoundView from "@/views/NotFoundView.vue"
-import CreateBoardPage from "@/views/CreateBoardPage.vue"
-import SignIn from "@/views/auth/SignIn.vue"
-import SignUp from "@/views/auth/SignUp.vue"
+import HomePage from "@/pages/HomePage.vue";
+import MatchPage from "@/pages/MatchPage.vue";
+import RankingsPage from "@/pages/RankingsPage.vue";
+import PeoplePage from "@/pages/PeoplePage.vue";
+import NotFoundView from "@/pages/NotFoundView.vue"
+import CreateBoardPage from "@/pages/CreateBoardPage.vue"
+import SignIn from "@/pages/auth/SignIn.vue"
+import SignUp from "@/pages/auth/SignUp.vue"
 
 
 
@@ -20,6 +23,21 @@ const router = createRouter({
       path: "/create-board",
       name: "create-board",
       component: CreateBoardPage,
+    },
+    {
+      path: "/matches",
+      name: "matches",
+      component: MatchPage,
+    },
+    {
+      path: "/rankings",
+      name: "Rankings",
+      component: RankingsPage,
+    },
+    {
+      path: "/people",
+      name: "People",
+      component: PeoplePage,
     },
     {
       path: "/signin",
