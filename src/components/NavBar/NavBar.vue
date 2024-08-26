@@ -19,7 +19,8 @@
         v-for="(menu, index) in getTabList"
         :key="index"
         :to="menu.href"
-        :class="[getCurrentTab === index && 'text-green-500  border-green-500', 'border-b-2 py-2 px-4 cursor-pointer']"
+        :class="[isActiveLink(menu.href)
+            && 'text-green-500  border-green-500', 'border-b-2 py-2 px-4 cursor-pointer']"
         @click="switchTab(index)"
       >{{ menu.title }}</RouterLink>
       <div class="flex-1 border-b-2"></div>
@@ -28,7 +29,7 @@
 </template>
   
   <script>
-import { RouterLink } from "vue-router";
+import { RouterLink, useRoute } from "vue-router";
 import ProfileMenu from "../DropDown/ProfileMenu.vue";
 import SelectBoard from "../DropDown/SelectBoard.vue";
 import SelectMenu from "../DropDown/SelectMenu.vue";
@@ -58,6 +59,10 @@ export default {
     }
   },
   methods: {
+    isActiveLink(routePath) {
+      const route = useRoute();
+      return route.path === routePath;
+    },
     toggleProfileMenu() {
       this.oppenProfileMenu = !this.oppenProfileMenu;
     },

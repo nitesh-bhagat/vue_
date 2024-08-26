@@ -35,7 +35,11 @@ const store = createStore({
 
         },
         getAllMatchesbyId(state, matches) {
+
             state.matches = matches
+
+            console.log(state.matches, "STATE MATCHES")
+            console.log(matches, "API MATCHES")
         }
 
     },
@@ -47,16 +51,31 @@ const store = createStore({
             commit('changeBoard', index)
         },
         AddMatch({ commit }, payload) {
-            commit('AddMatch', payload)
-            commit('AddPointsToWinner', payload.winner)
-            commit('AddToTotalMatch', payload.participants_id)
+            const res = fetch('http://localhost:4000/matches', {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                method: "POST",
+                body: JSON.stringify(payload)
+            })
+
+
+            if (res.ok) {
+                commit('AddMatch', payload)
+
+                commit('AddPointsToWinner', payload.winner)
+                commit('AddToTotalMatch', payload.participants_id)
+            }
+
+
         },
 
         async getAllMatchesbyId({ commit }, id) {
             const res = await fetch('http://localhost:4000/matches');
             const matches = await res.json()
+            console.log("api fetched...")
             commit('getAllMatchesbyId', matches)
-            console.log(matches, "fetched all matches")
         }
     },
 })
