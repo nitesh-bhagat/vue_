@@ -4,6 +4,7 @@
       class="flex flex-row items-center gap-2 border py-2 px-2 rounded-md cursor-pointer select-none"
       @click="toggleBoardMenu"
     >
+      <!-- Select Item -->
       <div class="flex flex-col min-w-48 max-w-48">
         <span class="text-sm font-bold truncate w-42">
           #{{ getBoardList[getCurrentSelectedBoardIndex].name
@@ -15,7 +16,7 @@
       </div>
       <i class="pi pi-angle-down"></i>
     </div>
-
+    <!--Popup list  -->
     <div
       v-show="isOpen"
       class="w-full absolute z-20 top-14 bg-white shadow-md rounded-md overflow-hidden"
@@ -39,6 +40,7 @@
         <RouterLink to="/create-board">
           <button
             class="p-1 rounded-md flex items-center justify-center w-full hover:bg-green-400 hover:text-white text-sm"
+            @click="isOpen = false"
           >Create new board</button>
         </RouterLink>
       </div>

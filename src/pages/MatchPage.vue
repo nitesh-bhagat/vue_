@@ -32,24 +32,17 @@ export default {
     ...mapState(["matches"])
   },
   methods: {
-    ...mapActions(["getAllMatchesbyId"]),
+    ...mapActions(["getAllMatches"]),
     toggleForm() {
       this.isMatchFormOppen = !this.isMatchFormOppen;
     },
     async refreshed() {
       this.isRefreshed = true;
-      console.log("ref");
-      // await this.getAllMatchesbyId();
+      await this.getAllMatches();
     }
   },
   async mounted() {
-    await this.getAllMatchesbyId();
-  },
-  updated() {
-    // this.refreshed();
-    if (this.isRefreshed) {
-      this.getAllMatchesbyId();
-    }
+    await this.getAllMatches();
   }
 };
 </script>

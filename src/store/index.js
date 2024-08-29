@@ -19,7 +19,6 @@ const store = createStore({
         },
         AddMatch(state, payload) {
             state.matches.push(payload)
-
         },
         AddPointsToWinner(state, user_id) {
             // adding 2 points to winner's account
@@ -34,12 +33,8 @@ const store = createStore({
             })
 
         },
-        getAllMatchesbyId(state, matches) {
-
+        getAllMatches(state, matches) {
             state.matches = matches
-
-            console.log(state.matches, "STATE MATCHES")
-            console.log(matches, "API MATCHES")
         }
 
     },
@@ -50,8 +45,8 @@ const store = createStore({
         changeBoard({ commit }, index) {
             commit('changeBoard', index)
         },
-        AddMatch({ commit }, payload) {
-            const res = fetch('http://localhost:4000/matches', {
+        async AddMatch({ commit }, payload) {
+            const res = await fetch('http://localhost:4000/matches', {
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
@@ -59,23 +54,15 @@ const store = createStore({
                 method: "POST",
                 body: JSON.stringify(payload)
             })
-
-
             if (res.ok) {
                 commit('AddMatch', payload)
-
-                commit('AddPointsToWinner', payload.winner)
-                commit('AddToTotalMatch', payload.participants_id)
             }
-
-
         },
 
-        async getAllMatchesbyId({ commit }, id) {
+        async getAllMatches({ commit }, id) {
             const res = await fetch('http://localhost:4000/matches');
             const matches = await res.json()
-            console.log("api fetched...")
-            commit('getAllMatchesbyId', matches)
+            commit('getAllMatches', matches)
         }
     },
 })

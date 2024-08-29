@@ -15,7 +15,7 @@
         </select>
 
         <input
-          v-model="form.player1_score"
+          v-model.number="form.player1_score"
           type="text"
           placeholder="score"
           class="outline-none w-16 text-center text-2xl"
@@ -36,7 +36,7 @@
         </select>
 
         <input
-          v-model="form.player2_score"
+          v-model.number="form.player2_score"
           type="text"
           placeholder="score"
           class="outline-none w-16 text-center text-2xl"
