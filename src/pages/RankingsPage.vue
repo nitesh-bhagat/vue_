@@ -3,7 +3,7 @@
     <h1 class="text-xl">Current Ranking</h1>
 
     <PeopleTile
-      v-for="(person, index) in getRanking"
+      v-for="(person, index) in getLatestRanking"
       :key="person.id"
       :person="person"
       :standing="index+1"
@@ -13,6 +13,7 @@
 
 <script>
 import PeopleTile from "@/components/PeopleTile.vue";
+import { mapGetters } from "vuex";
 
 export default {
   name: "RankingsPage",
@@ -20,12 +21,7 @@ export default {
     PeopleTile
   },
   computed: {
-    // getPeopleList(){
-    //     return this.$store.state.people
-    // },
-    getRanking() {
-      return this.$store.getters.getLatestRanking;
-    }
+    ...mapGetters(["getLatestRanking"])
   }
 };
 </script>

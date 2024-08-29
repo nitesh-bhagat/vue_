@@ -9,12 +9,23 @@
 
 
 <script>
+import { mapActions } from "vuex";
 import NavBar from "./components/NavBar/NavBar.vue";
+import { RouterView } from "vue-router";
 
 export default {
   name: "App",
   components: {
-    NavBar
+    NavBar,
+    RouterView
+  },
+  methods: {
+    ...mapActions(["getAllMatches", "getAllBoard"])
+  },
+
+  async mounted() {
+    await this.getAllMatches();
+    await this.getAllBoard();
   }
 };
 </script>

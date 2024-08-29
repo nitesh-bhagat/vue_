@@ -5,14 +5,9 @@
       @click="toggleBoardMenu"
     >
       <!-- Select Item -->
-      <div class="flex flex-col min-w-48 max-w-48">
-        <span class="text-sm font-bold truncate w-42">
-          #{{ getBoardList[getCurrentSelectedBoardIndex].name
-          }}
-        </span>
-        <span
-          class="text-xs"
-        >{{ getBoardList[getCurrentSelectedBoardIndex].participants }} participants</span>
+      <div v-if="getSelectedBoard" class="flex flex-col min-w-48 max-w-48">
+        <span class="text-sm font-bold truncate w-42">{{ getSelectedBoard.name }}</span>
+        <span class="text-xs">{{getSelectedBoard.participants}} participants</span>
       </div>
       <i class="pi pi-angle-down"></i>
     </div>
@@ -24,13 +19,15 @@
       <div class="flex flex-col min-h-fit max-h-72 overflow-scroll p-2">
         <div
           @click="switchBoard(index)"
-          v-for="(borad, index) in getBoardList"
+          v-for="(borad, index) in boardList"
           :key="index"
-          :class="[index === getCurrentSelectedBoardIndex && 'border bg-slate-100', 'flex flex-row hover:bg-slate-50 cursor-pointer  p-2 rounded-md items-center justify-between']"
+          :class="[index === selectedBoardIndex && 'border bg-slate-100', 'flex flex-row hover:bg-slate-50 cursor-pointer  p-2 rounded-md items-center justify-between']"
         >
           <div class="flex flex-col">
             <span class="text-sm">{{ borad.name }}</span>
-            <span class="text-xs text-slate-500">{{ borad.participants }} participants | Football</span>
+            <span
+              class="text-xs text-slate-500"
+            >{{ borad.participants }} participants | {{ borad.board_type }}</span>
           </div>
           <i class="pi pi-angle-right"></i>
         </div>
@@ -50,6 +47,7 @@
 
 <script>
 import { RouterLink } from "vue-router";
+import { mapState } from "vuex";
 
 export default {
   name: "SelectBoard",
@@ -62,24 +60,24 @@ export default {
     RouterLink
   },
   computed: {
-    getCurrentSelectedBoardIndex() {
-      return this.$store.state.selectedBoardIndex;
-    },
-    getBoardList() {
-      return this.$store.state.board_list;
+    ...mapState(["boardList", "selectedBoardIndex"]),
+    getSelectedBoard() {
+      console.log();
+      return this.boardList[this.selectedBoardIndex];
     }
   },
   methods: {
+    async switchBoard(newBoardIndex) {
+      this.isOpen = false;
+
+      this.$store.dispatch("changeBoard", newBoardIndex);
+    },
+    // Handler function
     toggleBoardMenu() {
       this.isOpen = !this.isOpen;
     },
     closeDropdown() {
       this.isOpen = false;
-    },
-
-    switchBoard(index) {
-      this.isOpen = false;
-      this.$store.dispatch("changeBoard", index);
     },
     handleClickOutside(event) {
       const dropdown = this.$refs.dropdown;

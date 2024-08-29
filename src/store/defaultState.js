@@ -1,3 +1,4 @@
+const InitialPoints = 0;
 const defaultState = {
     count: 0,
     todolist: [
@@ -22,33 +23,7 @@ const defaultState = {
 
     ],
     selectedBoardIndex: 0,
-    board_list: [
-        {
-            name: "RehookChampionShip",
-            participants: 10
-        },
-        {
-            name: "RocketLeague",
-            participants: 10
-        },
-        {
-            name: "SaturdayCricket",
-            participants: 10
-        },
-        {
-            name: "TT-Championship",
-            participants: 10
-        },
-        {
-            name: "Bandminton-Championship",
-            participants: 10
-        },
-        {
-            name: "Pro Chess league",
-            participants: 10
-        },
-
-    ],
+    boardList: [],
     selectedTabIndex: 0,
     people: [
         {
@@ -141,3 +116,5 @@ const defaultState = {
 
 
 export default defaultState
+
+export { InitialPoints }
