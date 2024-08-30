@@ -19,15 +19,15 @@
       <div class="flex flex-col min-h-fit max-h-72 overflow-scroll p-2">
         <div
           @click="switchBoard(index)"
-          v-for="(borad, index) in boardList"
+          v-for="(board, index) in boardList"
           :key="index"
           :class="[index === selectedBoardIndex && 'border bg-slate-100', 'flex flex-row hover:bg-slate-50 cursor-pointer  p-2 rounded-md items-center justify-between']"
         >
           <div class="flex flex-col">
-            <span class="text-sm">{{ borad.name }}</span>
+            <span class="text-sm">{{ board.name }}</span>
             <span
               class="text-xs text-slate-500"
-            >{{ borad.participants }} participants | {{ borad.board_type }}</span>
+            >{{ board.participants }} participants | {{ board.board_type }}</span>
           </div>
           <i class="pi pi-angle-right"></i>
         </div>
@@ -47,7 +47,7 @@
 
 <script>
 import { RouterLink } from "vue-router";
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 
 export default {
   name: "SelectBoard",
@@ -62,15 +62,20 @@ export default {
   computed: {
     ...mapState(["boardList", "selectedBoardIndex"]),
     getSelectedBoard() {
-      console.log();
       return this.boardList[this.selectedBoardIndex];
     }
   },
   methods: {
+    ...mapActions(["changeSelectedBoard", "changeBoard", "changeBoardId"]),
     async switchBoard(newBoardIndex) {
       this.isOpen = false;
 
-      this.$store.dispatch("changeBoard", newBoardIndex);
+      this.changeBoard(newBoardIndex);
+
+      this.changeBoardId(
+        this.boardList.filter(board => board.id === newBoardIndex)[0].id
+      );
+      this.changeSelectedBoard(newBoardIndex);
     },
     // Handler function
     toggleBoardMenu() {

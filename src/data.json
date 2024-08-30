@@ -78,149 +78,15 @@
       "id": "cbwcbwecb134",
       "participants_id": [
         5,
-        9
-      ],
-      "score": [
-        2,
-        1
-      ],
-      "winner": 5
-    },
-    {
-      "id": "cbwcbwecb134",
-      "participants_id": [
-        8,
         3
       ],
       "score": [
         3,
-        1
-      ],
-      "winner": 8
-    },
-    {
-      "id": "",
-      "participants_id": [
-        2,
-        9
-      ],
-      "score": [
-        4,
-        0
-      ],
-      "winner": 2
-    },
-    {
-      "id": "",
-      "participants_id": [
-        5,
         2
-      ],
-      "score": [
-        2,
-        6
-      ],
-      "winner": 2
-    },
-    {
-      "id": "cbwcbwecb134",
-      "participants_id": [
-        2,
-        7
-      ],
-      "score": [
-        4,
-        1
-      ],
-      "winner": 2
-    },
-    {
-      "id": "cbwcbwecb134",
-      "participants_id": [
-        1,
-        5
-      ],
-      "score": [
-        5,
-        2
-      ],
-      "winner": 1
-    },
-    {
-      "id": "cbwcbwecb134",
-      "participants_id": [
-        1,
-        6
-      ],
-      "score": [
-        6,
-        2
-      ],
-      "winner": 1
-    },
-    {
-      "id": "cbwcbwecb134",
-      "participants_id": [
-        6,
-        2
-      ],
-      "score": [
-        7,
-        5
-      ],
-      "winner": 6
-    },
-    {
-      "id": "cbwcbwecb134",
-      "participants_id": [
-        5,
-        7
-      ],
-      "score": [
-        7,
-        3
       ],
       "winner": 5
-    },
-    {
-      "id": "cbwcbwecb134",
-      "participants_id": [
-        7,
-        5
-      ],
-      "score": [
-        6,
-        3
-      ],
-      "winner": 7
-    },
-    {
-      "id": "cbwcbwecb134",
-      "participants_id": [
-        7,
-        1
-      ],
-      "score": [
-        0,
-        8
-      ],
-      "winner": 1
     }
   ],
-  "board_list": [
-    {
-      "id": 0,
-      "name": "RehookChampionShip",
-      "participants": 10,
-      "board_type": "Football",
-      "default": true
-    },
-    {
-      "id": 1,
-      "name": "CricketLegue",
-      "participants": 10,
-      "board_type": "Cricket",
-      "default": false
-    }
-  ]
+  "app_settings": {},
+  "board_list": []
 }

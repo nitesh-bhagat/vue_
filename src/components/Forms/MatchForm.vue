@@ -14,6 +14,13 @@
           <option v-for="person in getPeople" :key="person.id" :value="person.id">{{ person.name }}</option>
         </select>
 
+        <SelectMenu
+          :children="getPeople"
+          :selectedItem="selectedItem"
+          placeholder="Select people"
+          @onChange="setSelectedMenu"
+        />
+
         <input
           v-model.number="form.player1_score"
           type="text"
@@ -52,6 +59,8 @@
 </template>
 
 <script>
+import SelectMenu from "../DropDown/SelectMenu.vue";
+
 export default {
   name: "MatchForm",
   data() {
@@ -62,8 +71,12 @@ export default {
         player2_id: "",
         player1_score: null,
         player2_score: null
-      }
+      },
+      selectedItem: null
     };
+  },
+  components: {
+    SelectMenu
   },
   computed: {
     getPeople() {
@@ -78,6 +91,9 @@ export default {
     }
   },
   methods: {
+    setSelectedMenu(option) {
+      this.selectedItem = option;
+    },
     submitGame() {
       const matchData = {
         id: this.form.id,

@@ -20,9 +20,9 @@ const defaultState = {
             title: "People",
             href: "/people"
         },
-
     ],
     selectedBoardIndex: 0,
+    selectedBoardId: null,
     boardList: [],
     selectedTabIndex: 0,
     people: [
