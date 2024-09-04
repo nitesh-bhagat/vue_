@@ -17,6 +17,11 @@ const defaultState = {
         },
         {
             id: 3,
+            title: "Tournament",
+            href: "/tournament"
+        },
+        {
+            id: 4,
             title: "People",
             href: "/people"
         },

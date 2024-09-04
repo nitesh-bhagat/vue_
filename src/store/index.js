@@ -15,6 +15,12 @@ const store = createStore({
 
             return state.people.sort((a, b) => b.points - a.points)
         },
+        getTotalMatchByPlayerId(state) {
+            // const x = (player_id) => {state.matches.filter((match) => match.participants_id.includes(player_id))}
+            
+            // console.log(x)
+            return (player_id) => state.matches.filter((match) => match.participants_id.includes(player_id)).length
+        }
 
     },
     mutations: {

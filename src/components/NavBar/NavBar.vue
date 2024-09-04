@@ -3,7 +3,7 @@
     <div class="flex flex-row px-3 pt-3 gap-2 items-center">
       <!-- logo -->
       <h1 class="mr-auto text-4xl font-bold text-green-500">
-        Score
+        <span>Score</span>
         <span class="text-black">pion</span>
       </h1>
 

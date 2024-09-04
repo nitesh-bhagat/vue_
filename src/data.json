@@ -77,14 +77,110 @@
     {
       "id": "cbwcbwecb134",
       "participants_id": [
+        6,
+        8
+      ],
+      "score": [
+        4,
+        3
+      ],
+      "winner": 6
+    },
+    {
+      "id": "",
+      "participants_id": [
+        6,
+        8
+      ],
+      "score": [
         2,
+        6
+      ],
+      "winner": 8
+    },
+    {
+      "id": "cbwcbwecb134",
+      "participants_id": [
+        6,
+        8
+      ],
+      "score": [
+        7,
+        6
+      ],
+      "winner": 6
+    },
+    {
+      "id": "cbwcbwecb134",
+      "participants_id": [
+        6,
+        2
+      ],
+      "score": [
+        6,
+        5
+      ],
+      "winner": 6
+    },
+    {
+      "id": "cbwcbwecb134",
+      "participants_id": [
+        9,
         5
       ],
       "score": [
-        8,
+        2,
+        5
+      ],
+      "winner": 5
+    },
+    {
+      "id": "",
+      "participants_id": [
+        9,
+        5
+      ],
+      "score": [
+        3,
         2
       ],
-      "winner": 2
+      "winner": 9
+    },
+    {
+      "id": "cbwcbwecb134",
+      "participants_id": [
+        5,
+        9
+      ],
+      "score": [
+        5,
+        4
+      ],
+      "winner": 5
+    },
+    {
+      "id": "cbwcbwecb134",
+      "participants_id": [
+        5,
+        8
+      ],
+      "score": [
+        2,
+        5
+      ],
+      "winner": 8
+    },
+    {
+      "id": "cbwcbwecb134",
+      "participants_id": [
+        5,
+        8
+      ],
+      "score": [
+        1,
+        7
+      ],
+      "winner": 8
     }
   ],
   "users": [
@@ -104,43 +200,9 @@
       "item": {
         "item": {
           "item": {
-            "item": {
-              "item": {
-                "item": {
-                  "item": {
-                    "item": {
-                      "item": {
-                        "item": {
-                          "item": {
-                            "item": {
-                              "item": {
-                                "item": {
-                                  "selectedBoardId": null,
-                                  "selectedBoardIndex": 1
-                                },
-                                "selectedBoardIndex": 0
-                              },
-                              "selectedBoardIndex": 2
-                            },
-                            "selectedBoardIndex": 1
-                          },
-                          "selectedBoardIndex": 0
-                        },
-                        "selectedBoardIndex": 0
-                      },
-                      "selectedBoardIndex": 1
-                    },
-                    "selectedBoardIndex": 2
-                  },
-                  "selectedBoardIndex": 0
-                },
-                "selectedBoardIndex": 1
-              },
-              "selectedBoardIndex": 2
-            },
             "selectedBoardIndex": 0
           },
-          "selectedBoardIndex": 2
+          "selectedBoardIndex": 0
         },
         "selectedBoardIndex": 1
       },
