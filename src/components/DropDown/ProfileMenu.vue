@@ -23,12 +23,15 @@
       <MenuTile title="Profile" icon="pi-user"></MenuTile>
       <MenuTile title="Setting" icon="pi-cog"></MenuTile>
       <MenuTile title="Help" icon="pi-info-circle"></MenuTile>
-      <MenuTile title="Logout" icon="pi-sign-out"></MenuTile>
+      <RouterLink to="/signin">
+        <MenuTile title="Logout" icon="pi-sign-out"></MenuTile>
+      </RouterLink>
     </div>
   </div>
 </template>
 
 <script>
+import { RouterLink } from "vue-router";
 import MenuTile from "../MenuTile.vue";
 
 export default {

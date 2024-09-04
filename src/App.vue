@@ -17,7 +17,7 @@ export default {
   name: "App",
   data() {
     return {
-      hideNavBarFrom: ["home", "create-board"]
+      hideNavBarFrom: ["home", "create-board", "testing", "signin", "signup"]
     };
   },
   components: {

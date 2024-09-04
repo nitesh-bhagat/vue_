@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: "RadioButton",
+  name: "Toggle",
   data() {
     return {
       value: false

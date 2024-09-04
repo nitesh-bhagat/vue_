@@ -25,18 +25,24 @@
         @onChange="setSelectedMenu"
       />
 
-      <!-- RADIO BUTTON -->
-      <span class="text-slate-300">Radio Button</span>
-      <RadioButton />
+      <!-- Toggle BUTTON -->
+      <span class="text-slate-300">Toggle Button</span>
+      <Toggle />
 
       <!-- POPOVER -->
       <span class="text-slate-300">Popover</span>
       <Popover content="Hello this is a popover">
         <h1>Hove on me!</h1>
       </Popover>
+      <!-- Radio Button -->
+      <span class="text-slate-300">Radio Button</span>
+      <RadioButton />
+
+      <button @click="openModal" class="p-2 bg-green-500 text-white rounded">Open Modal</button>
+      <SideModal ref="modalRef" />
     </div>
 
-    <RouterLink to="/" class="py-2">Back to home</RouterLink>
+    <button @click="back" class="py-2">Back</button>
   </div>
 </template>
 <script>
@@ -44,7 +50,10 @@ import SelectMenu from "@/components/DropDown/SelectMenu.vue";
 import Input from "@/components/Input/Input.vue";
 import MenuTile from "@/components/MenuTile.vue";
 import Popover from "@/components/Popover/Popover.vue";
-import RadioButton from "@/components/Radio/RadioButton.vue";
+import RadioButton from "@/components/RadioButton/RadioButton.vue";
+import SideModal from "@/components/SideModal/SideModal.vue";
+
+import Toggle from "@/components/Toggle/Toggle.vue";
 import { RouterLink } from "vue-router";
 
 export default {
@@ -54,8 +63,10 @@ export default {
     RouterLink,
     SelectMenu,
     MenuTile,
+    Toggle,
+    Popover,
     RadioButton,
-    Popover
+    SideModal
   },
   data() {
     return {
@@ -85,11 +96,17 @@ export default {
     };
   },
   methods: {
+    back() {
+      this.$router.back();
+    },
     setSelectedMenu(selectedOption) {
       this.selectedItem = selectedOption;
     },
     setSelectedApp(selectedOption) {
       this.selectedApp = selectedOption;
+    },
+    openModal() {
+      this.$refs.modalRef.openModal(); // Use ref to call openModal method in the modal component
     }
   }
 };

@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "@/pages/HomePage.vue";
 import MatchPage from "@/pages/MatchPage.vue";
+import TestingPage from "@/pages/TestingPage.vue";
 import RankingsPage from "@/pages/RankingsPage.vue";
 import PeoplePage from "@/pages/PeoplePage.vue";
 import NotFoundView from "@/pages/NotFoundView.vue"
@@ -48,6 +49,11 @@ const router = createRouter({
       path: "/signup",
       name: "signup",
       component: SignUp,
+    },
+    {
+      path: "/testing",
+      name: "testing",
+      component: TestingPage,
     },
     {
       path: "/:catchAll(.*)",

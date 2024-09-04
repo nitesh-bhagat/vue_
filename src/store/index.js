@@ -63,20 +63,20 @@ const store = createStore({
             commit('changeBoard', newBoardIndex)
         },
         async changeBoardId({ commit }, newBoardId) {
-            // const res = await fetch('http://localhost:4000/app_settings', {
-            //     headers: {
-            //         'Accept': 'application/json',
-            //         'Content-Type': 'application/json'
-            //     },
-            //     method: "PATCH",
-            //     body: JSON.stringify({
-            //         selectedBoardId: newBoardId
-            //     })
-            // });
-            // if (res.ok) {
-            //     console.log(res)
+            const res = await fetch('http://localhost:4000/users/user_01', {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                method: "PATCH",
+                body: JSON.stringify({
+                    selectedBoardId: newBoardId
+                })
+            });
+            if (res.ok) {
+                console.log(res)
                 commit('changeBoardId', newBoardId)
-            // }
+            }
         },
         async AddMatch({ commit }, payload) {
             const res = await fetch('http://localhost:4000/matches', {

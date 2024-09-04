@@ -72,9 +72,9 @@ export default {
 
       this.changeBoard(newBoardIndex);
 
-      this.changeBoardId(
-        this.boardList.filter(board => board.id === newBoardIndex)[0].id
-      );
+      console.log(this.boardList[newBoardIndex].id, newBoardIndex);
+
+      this.changeBoardId(this.boardList[newBoardIndex].id);
       this.changeSelectedBoard(newBoardIndex);
     },
     // Handler function
