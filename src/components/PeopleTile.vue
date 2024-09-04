@@ -25,15 +25,15 @@
       <div class="flex flex-col items-center justify-center">
         <span class="text-xs">G.D</span>
         <span class="font-bold">34</span>
-      </div> -->
+      </div>-->
       <div class="flex flex-col items-center justify-center">
         <span class="text-xs">Matches</span>
-        <span class="font-bold">{{ matches }}</span>
+        <span class="font-bold">{{ person.total_matches }}</span>
       </div>
-      <!-- <div class="flex flex-col items-center justify-center">
+      <div class="flex flex-col items-center justify-center">
         <span class="text-xs">Ratings</span>
-        <span class="font-bold">0.3</span>
-      </div> -->
+        <span class="font-bold">{{roundedValue}}</span>
+      </div>
 
       <span
         :class="[standing===1?'text-2xl text-green-500':'text-base','font-bold w-32 text-right']"
@@ -43,8 +43,6 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-
 export default {
   name: "PeopleTile",
   props: ["person", "standing"],
@@ -54,14 +52,24 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["getTotalMatchByPlayerId"]),
     getXP() {
       return Number(this.person.total_goal / this.person.total_matches);
+    },
+    roundedValue() {
+      return this.roundToDecimal(
+        this.person.points / this.person.total_matches,
+        2
+      ); // Change 2 to any number of decimal places you need
     }
   },
-  mounted() {
-    this.matches = this.getTotalMatchByPlayerId(this.person.id);
-
+  methods: {
+    roundToDecimal(value, decimals) {
+      const number = parseFloat(value);
+      if (isNaN(number)) {
+        return 0; // Return 0 if NaN
+      }
+      return parseFloat(number.toFixed(decimals)); // Or use Math.round method shown above
+    }
   }
 };
 </script>

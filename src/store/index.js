@@ -10,17 +10,15 @@ const store = createStore({
 
             state.people.map((person) => {
                 person.points = state.matches.filter((match) => match.winner === person.id).reduce((totalPoints, match) => totalPoints + 2, InitialPoints)
+                person.total_matches = state.matches.filter((match) => match.participants_id.includes(person.id)).length
             })
+
+
 
 
             return state.people.sort((a, b) => b.points - a.points)
         },
-        getTotalMatchByPlayerId(state) {
-            // const x = (player_id) => {state.matches.filter((match) => match.participants_id.includes(player_id))}
-            
-            // console.log(x)
-            return (player_id) => state.matches.filter((match) => match.participants_id.includes(player_id)).length
-        }
+
 
     },
     mutations: {
