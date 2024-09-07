@@ -1,0 +1,171 @@
+{
+  "people": [
+    {
+      "id": "1",
+      "name": "Akshay Suhag",
+      "image": "https://media.licdn.com/dms/image/v2/D4D03AQEMq2z1dkLy0Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1684134516841?e=1729728000&v=beta&t=Mh0BLUfP2-gp5X3OAQgNJbpSvvQpL6VWm3tKZOMNdNo",
+      "points": 0,
+      "total_matches": 0,
+      "goal_difference": 0
+    },
+    {
+      "id": "2",
+      "name": "Chanchal Aggarwal",
+      "image": "https://media.licdn.com/dms/image/v2/D5603AQHm9SJ_bA9Nhw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1684307774197?e=1729728000&v=beta&t=5u0VcNMFJZ0fE185W4M8JNv3nCDjSRapAPXSydGnggc",
+      "points": 0,
+      "total_matches": 0,
+      "goal_difference": 0
+    },
+    {
+      "id": "3",
+      "name": "Sandip Das",
+      "image": "https://media.licdn.com/dms/image/v2/D5603AQG1uYrci88ucA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1721579934409?e=1729728000&v=beta&t=dVnyiVc7Yn-909zwsG76KmP7krz1DhTK4-NlYtAypUA",
+      "points": 0,
+      "total_matches": 0,
+      "goal_difference": 0
+    },
+    {
+      "id": "4",
+      "name": "Nikhil Goyal",
+      "image": "https://media.licdn.com/dms/image/v2/C4E03AQHNbrWNrJhrzA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1561445042247?e=1729728000&v=beta&t=dsou1ekiWbTQBX9dfljTZ7PDK3_CA6JKejbKj2KhxGA",
+      "points": 0,
+      "total_matches": 0,
+      "goal_difference": 0
+    },
+    {
+      "id": "5",
+      "name": "Mayank Sharma",
+      "image": "https://media.licdn.com/dms/image/v2/D4D03AQG0jQTGEYmiTQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1684130046094?e=1729728000&v=beta&t=7UUcAPRY9JbDU2hMnmp_-R76_1DA9jkX_-gPgZrAlCQ",
+      "points": 0,
+      "total_matches": 0,
+      "goal_difference": 0
+    },
+    {
+      "id": "6",
+      "name": "Vinay Shakya",
+      "image": "https://media.licdn.com/dms/image/v2/D5603AQFbgsUZymTO9A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1684130669233?e=1729728000&v=beta&t=Ljtmbjp8C823xxJPEFXndidu7rbvwkkDhDgdo6NRuXc",
+      "points": 0,
+      "total_matches": 0,
+      "goal_difference": 0
+    },
+    {
+      "id": "7",
+      "name": "Nitesh Bhagat",
+      "image": "https://media.licdn.com/dms/image/v2/D5603AQGpNj-C-1maqA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1689247500959?e=1729728000&v=beta&t=zmernVeqzX6QSHjAp0Hdik2IW_ObFHnflDkMbY8PX3Q",
+      "points": 0,
+      "total_matches": 0,
+      "goal_difference": 0
+    },
+    {
+      "id": "8",
+      "name": "Prakash Kumar",
+      "image": "https://media.licdn.com/dms/image/v2/D5603AQE_URjL6lUmIA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1684131957707?e=1729728000&v=beta&t=xuwnp74MxKIC8DNAo5zEjrj9WuacGCvN0vgvwlPq4QY",
+      "points": 0,
+      "total_matches": 0,
+      "goal_difference": 0
+    },
+    {
+      "id": "9",
+      "name": "Litesh Sinha",
+      "image": "https://media.licdn.com/dms/image/v2/D4D03AQFlqfzZtzYumQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1684129843524?e=1729728000&v=beta&t=lRvMlDimYZFE-fKSGWFHw_Z977vkf1uUFhfJbMGvq8Q",
+      "points": 0,
+      "total_matches": 0,
+      "goal_difference": 0
+    }
+  ],
+  "matches": [
+    {
+      "id": "cbwcbwecb134",
+      "participants_id": [
+        2,
+        5
+      ],
+      "score": [
+        8,
+        2
+      ],
+      "winner": 2
+    }
+  ],
+  "users": [
+    {
+      "id": "user_01",
+      "name": "Nitesh Bhagat",
+      "email": "nikubh1998@gmail.com",
+      "app_settings": {
+        "selectedBoardId": null,
+        "selectedBoardIndex": 1
+      },
+      "selectedBoardId": "app_01"
+    }
+  ],
+  "app_settings": {
+    "item": {
+      "item": {
+        "item": {
+          "item": {
+            "item": {
+              "item": {
+                "item": {
+                  "item": {
+                    "item": {
+                      "item": {
+                        "item": {
+                          "item": {
+                            "item": {
+                              "item": {
+                                "item": {
+                                  "selectedBoardId": null,
+                                  "selectedBoardIndex": 1
+                                },
+                                "selectedBoardIndex": 0
+                              },
+                              "selectedBoardIndex": 2
+                            },
+                            "selectedBoardIndex": 1
+                          },
+                          "selectedBoardIndex": 0
+                        },
+                        "selectedBoardIndex": 0
+                      },
+                      "selectedBoardIndex": 1
+                    },
+                    "selectedBoardIndex": 2
+                  },
+                  "selectedBoardIndex": 0
+                },
+                "selectedBoardIndex": 1
+              },
+              "selectedBoardIndex": 2
+            },
+            "selectedBoardIndex": 0
+          },
+          "selectedBoardIndex": 2
+        },
+        "selectedBoardIndex": 1
+      },
+      "selectedBoardIndex": 2
+    },
+    "selectedBoardIndex": 0
+  },
+  "board_list": [
+    {
+      "id": "app_01",
+      "name": "Rocke tLegue",
+      "participants": 10,
+      "board_type": "Football"
+    },
+    {
+      "id": "app_02",
+      "name": "Fifa",
+      "participants": 10,
+      "board_type": "Football"
+    },
+    {
+      "id": "app_03",
+      "name": "Chess Championship",
+      "participants": 4,
+      "board_type": "Chess"
+    }
+  ]
+}
