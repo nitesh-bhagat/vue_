@@ -18,26 +18,37 @@
       </div>
     </div>
     <div class="flex flex-row items-center ml-auto gap-8">
-      <!-- <div class="flex flex-col items-center justify-center">
-        <span class="text-xs">G.A</span>
-        <span class="font-bold">30</span>
-      </div>
       <div class="flex flex-col items-center justify-center">
-        <span class="text-xs">G.D</span>
-        <span class="font-bold">34</span>
-      </div>-->
-      <div class="flex flex-col items-center justify-center">
-        <span class="text-xs">Matches</span>
+        <span class="text-xs">Played</span>
         <span class="font-bold">{{ person.total_matches }}</span>
       </div>
       <div class="flex flex-col items-center justify-center">
-        <span class="text-xs">Ratings</span>
-        <span class="font-bold">{{roundedValue}}</span>
+        <span class="text-xs">Won</span>
+        <span class="font-bold">{{ person.won_matches }}</span>
+      </div>
+      <div class="flex flex-col items-center justify-center">
+        <span class="text-xs">Lost</span>
+        <span class="font-bold">{{ person.lost_matches }}</span>
+      </div>
+      <div class="flex flex-col items-center justify-center">
+        <span class="text-xs">G.F</span>
+        <span class="font-bold">{{ person.goal_for }}</span>
+      </div>
+      <div class="flex flex-col items-center justify-center">
+        <span class="text-xs">G.A</span>
+        <span class="font-bold">{{ person.goal_against }}</span>
+      </div>
+      <div class=" flex-col items-center justify-center hidden">
+        <span class="text-xs">G.D</span>
+        <span class="font-bold">{{ roundToDecimal(person.goal_for / total_matches) }}</span>
       </div>
 
-      <span
-        :class="[standing===1?'text-2xl text-green-500':'text-base','font-bold w-32 text-right']"
-      >{{ person.points }} Points</span>
+      <div class="flex flex-col items-center justify-center w-16">
+        <span class="text-xs">Rating</span>
+        <span
+          :class="[standing===1?'text-2xl text-green-500':'text-base','font-bold  text-right']"
+        >{{ roundedValue }}</span>
+      </div>
     </div>
   </div>
 </template>
@@ -56,10 +67,7 @@ export default {
       return Number(this.person.total_goal / this.person.total_matches);
     },
     roundedValue() {
-      return this.roundToDecimal(
-        this.person.points / this.person.total_matches,
-        2
-      ); // Change 2 to any number of decimal places you need
+      return this.roundToDecimal(this.person.rating, 2); // Change 2 to any number of decimal places you need
     }
   },
   methods: {

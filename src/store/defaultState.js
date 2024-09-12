@@ -1,4 +1,5 @@
 const InitialPoints = 0;
+const InitialGoals = 0;
 const defaultState = {
     count: 0,
     todolist: [
@@ -17,11 +18,16 @@ const defaultState = {
         },
         {
             id: 3,
+            title: "Achievement",
+            href: "/achievement"
+        },
+        {
+            id: 4,
             title: "Tournament",
             href: "/tournament"
         },
         {
-            id: 4,
+            id: 5,
             title: "People",
             href: "/people"
         },
@@ -39,6 +45,7 @@ const defaultState = {
             points: 0,
             total_matches: 0,
             total_goal: 0,
+            mmr: 1000
         },
         {
             id: 2,
@@ -48,6 +55,7 @@ const defaultState = {
             points: 0,
             total_matches: 0,
             total_goal: 0,
+            mmr: 1000
         },
         {
             id: 3,
@@ -57,6 +65,7 @@ const defaultState = {
             points: 0,
             total_matches: 0,
             total_goal: 0,
+            mmr: 1000
         },
         {
             id: 4,
@@ -66,6 +75,7 @@ const defaultState = {
             points: 0,
             total_matches: 0,
             total_goal: 0,
+            mmr: 1000
         },
         {
             id: 5,
@@ -75,6 +85,7 @@ const defaultState = {
             points: 0,
             total_matches: 0,
             total_goal: 0,
+            mmr: 1000
         },
         {
             id: 6,
@@ -84,6 +95,7 @@ const defaultState = {
             points: 0,
             total_matches: 0,
             total_goal: 0,
+            mmr: 1000
         },
         {
             id: 7,
@@ -93,6 +105,7 @@ const defaultState = {
             points: 0,
             total_matches: 0,
             total_goal: 0,
+            mmr: 1000
         },
         {
             id: 8,
@@ -102,6 +115,8 @@ const defaultState = {
             points: 0,
             total_matches: 0,
             total_goal: 0,
+            mmr: 1000
+
         },
         {
             id: 9,
@@ -111,6 +126,18 @@ const defaultState = {
             points: 0,
             total_matches: 0,
             total_goal: 0,
+            mmr: 1000
+        },
+        {
+            id: "10",
+            name: "Indra Kumar EV",
+            image: "https://media.licdn.com/dms/image/v2/D4D03AQGuV92BlnEqbw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1700560557408?e=1730937600&v=beta&t=KgpyMAeBObT4_sJilJCVZeM5fM1NxvqOay5OYYedlgA",
+            points: 0,
+            total_matches: 0,
+            goal_difference: 0,
+            goal_for: 0,
+            goal_against: 0,
+            mmr: 1000
         }
     ],
     matches: [
@@ -122,4 +149,4 @@ const defaultState = {
 
 export default defaultState
 
-export { InitialPoints }
+export { InitialPoints, InitialGoals }

@@ -6,6 +6,7 @@ import RankingsPage from "@/pages/RankingsPage.vue";
 import PeoplePage from "@/pages/PeoplePage.vue";
 import NotFoundView from "@/pages/NotFoundView.vue"
 import CreateBoardPage from "@/pages/CreateBoardPage.vue"
+import AchievementPage from "@/pages/AchievementPage.vue"
 import SignIn from "@/pages/auth/SignIn.vue"
 import SignUp from "@/pages/auth/SignUp.vue"
 
@@ -34,6 +35,11 @@ const router = createRouter({
       path: "/rankings",
       name: "Rankings",
       component: RankingsPage,
+    },
+    {
+      path: "/achievement",
+      name: "Achievement",
+      component: AchievementPage,
     },
     {
       path: "/people",
