@@ -55,6 +55,9 @@
     <div class="flex flex-row items-end justify-end w-full">
       <button @click="submitGame" class="bg-green-500 px-6 py-1 text-white rounded-md">Save</button>
     </div>
+    <div class="flex flex-row items-end justify-end w-full">
+      <button @click="updateMMR" class="bg-green-500 px-6 py-1 text-white rounded-md">Try</button>
+    </div>
   </div>
 </template>
 
@@ -88,9 +91,20 @@ export default {
       } else {
         return this.form.player2_id;
       }
+    },
+    getGameLooserId() {
+      if (this.form.player1_score < this.form.player2_score) {
+        return this.form.player1_id;
+      } else {
+        return this.form.player2_id;
+      }
     }
   },
   methods: {
+    updateMMR() {
+      console.log("onmounttingg");
+      this.$store.dispatch("UpdateMMR");
+    },
     setSelectedMenu(option) {
       this.selectedItem = option;
     },
@@ -103,6 +117,10 @@ export default {
       };
 
       this.$store.dispatch("AddMatch", matchData);
+      this.$store.dispatch("UpdateMMR", {
+        winner: this.getGameWinnerId,
+        looser: this.getGameLooserId
+      });
 
       this.form = {
         id: "",
