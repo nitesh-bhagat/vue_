@@ -30,7 +30,7 @@ export default {
   computed: {
     getParticipants() {
       return param =>
-        this.$store.state.people.filter(item => item.id === param)[0];
+        this.$store.state.people.filter(item => item.id === param.toString())[0];
     }
   }
 };

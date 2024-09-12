@@ -50,11 +50,11 @@ const store = createStore({
                 state.people[index].rating = parseFloat(ratingg.toFixed(2));
 
                 // Log the rating for each person
-                console.log(state.people[index].rating);
+                console.log(state.people[index].name, state.people[index].mmr);
             });
 
             // Sort the array in descending order based on the rating
-            state.people.sort((a, b) => b.rating - a.rating);
+            state.people.sort((a, b) => b.mmr - a.mmr);
 
             return state.people;
         },
@@ -86,10 +86,12 @@ const store = createStore({
 
         },
         AddMMR(state, mmr_data) {
-            console.log(state.people);
             mmr_data.map((user_mmr) => {
                 state.people.filter((person) => person.id === user_mmr.id)[0].mmr = user_mmr.mmr;
             })
+        },
+        getAllPlayer(state, people){
+            state.people = people
         },
         getAllMatches(state, matches) {
             state.matches = matches
@@ -182,14 +184,19 @@ const store = createStore({
                 if (!response2.ok) {
                     throw new Error('Failed to update looser MMR');
                 }
-                console.log("mmmrrr", [{ id: winner.id, mmr: winnerNewMMR }, { id: looser.id, mmr: looserNewMMR }])
                 commit('AddMMR', [{ id: winner.id, mmr: winnerNewMMR }, { id: looser.id, mmr: looserNewMMR }])
             } catch (error) {
                 console.error('Error updating MMR:', error);
             }
         },
 
-        async getAllMatches({ commit }, id) {
+        async getAllPlayers({ commit }) {
+            const res = await fetch('http://localhost:4000/people');
+            const players = await res.json()
+            commit('getAllPlayer', players)
+        },
+
+        async getAllMatches({ commit }) {
             const res = await fetch('http://localhost:4000/matches');
             const matches = await res.json()
             commit('getAllMatches', matches)

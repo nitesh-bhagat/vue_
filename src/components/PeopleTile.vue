@@ -47,7 +47,7 @@
         <span class="text-xs">Rating</span>
         <span
           :class="[standing===1?'text-2xl text-green-500':'text-base','font-bold  text-right']"
-        >{{ roundedValue }}</span>
+        >{{ person.mmr }}</span>
       </div>
     </div>
   </div>
@@ -63,12 +63,6 @@ export default {
     };
   },
   computed: {
-    getXP() {
-      return Number(this.person.total_goal / this.person.total_matches);
-    },
-    roundedValue() {
-      return this.roundToDecimal(this.person.rating, 2); // Change 2 to any number of decimal places you need
-    }
   },
   methods: {
     roundToDecimal(value, decimals) {
