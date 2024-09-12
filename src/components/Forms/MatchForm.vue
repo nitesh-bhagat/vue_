@@ -56,7 +56,7 @@
       <button @click="submitGame" class="bg-green-500 px-6 py-1 text-white rounded-md">Save</button>
     </div>
     <div class="flex flex-row items-end justify-end w-full">
-      <button @click="updateMMR" class="bg-green-500 px-6 py-1 text-white rounded-md">Try</button>
+      <button @click="updatesMMR" class="bg-green-500 px-6 py-1 text-white rounded-md">Try</button>
     </div>
   </div>
 </template>
@@ -101,9 +101,30 @@ export default {
     }
   },
   methods: {
-    updateMMR() {
-      console.log("onmounttingg");
-      this.$store.dispatch("UpdateMMR");
+    updatesMMR() {
+      let jsonString = `
+      {
+      "id": "cbwcbwecb134",
+      "participants_id": [
+        "10",
+        8
+      ],
+      "score": [
+        3,
+        1
+      ],
+      "winner": "10"
+    }
+    `
+      let parsedData = JSON.parse(jsonString);
+      console.log(parsedData)
+      let winner = parsedData.winner.toString();
+      let looser = parsedData.participants_id.filter((ids) => ids.toString() !== winner)[0].toString();
+      this.$store.dispatch("UpdateMMR", {
+          winner,
+          looser
+        });
+
     },
     setSelectedMenu(option) {
       this.selectedItem = option;

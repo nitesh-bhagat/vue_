@@ -9,7 +9,7 @@
 
 
 <script>
-import { mapActions } from "vuex";
+import {mapActions, mapGetters} from "vuex";
 import NavBar from "./components/NavBar/NavBar.vue";
 import { RouterView } from "vue-router";
 
@@ -25,18 +25,21 @@ export default {
     RouterView
   },
   computed: {
+    ...mapGetters(["getLatestRanking"]),
     showNavBar() {
       const currentRoute = this.$route.name;
       return !this.hideNavBarFrom.includes(currentRoute);
     }
   },
   methods: {
-    ...mapActions(["getAllMatches", "getAllBoard"])
+    ...mapActions(["getAllPlayers","getAllMatches", "getAllBoard"])
   },
 
   async mounted() {
+    await this.getAllPlayers();
     await this.getAllMatches();
     await this.getAllBoard();
+    await this.getLatestRanking();
   }
 };
 </script>
